@@ -133,9 +133,11 @@ function fpptasumfields_civicrm_sumfields_definitions(&$custom) {
       FROM
         civicrm_contribution t1
         inner join civicrm_membership_payment t2 on t2.contribution_id = t1.id
-        left join civicrm_contribution_soft t3 on t3.contribution_id = t1.id
+        inner join civicrm_membership t3 on t3.id = t2.membership_id
+        left join civicrm_contribution_soft t4 on t4.contribution_id = t1.id
       WHERE
-        NEW.contact_id   in (t1.contact_id, t3.contact_id)
+        NEW.contact_id in (t1.contact_id, t4.contact_id)
+        AND t3.contact_id = NEW.contact_id
         AND t1.contribution_status_id = 1
         AND t1.financial_type_id IN (7)
         AND t1.is_test = 0 -- and t1.id = 8275
