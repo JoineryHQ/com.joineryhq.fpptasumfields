@@ -116,17 +116,33 @@ function fpptasumfields_civicrm_sumfields_definitions(&$custom) {
   // on last completed membership payment. This will allow SumFields to provide
   // its usual "financial type" filter options, which fppta can use to limit, e.g.
   // to 'cppt' membership payments.
-  
   $custom['fields']['fppta_last_membership_payment'] = array(
     'label' => E::ts('Last Membership Payment: Info'),
     'data_type' => 'String',
     'html_type' => 'Text',
     'weight' => '60',
     'text_length' => '32',
-    'trigger_sql' =>'(SELECT concat(date_format(t1.receive_date, "%Y-%m-%d"), " (", t1.invoice_number, ")") FROM civicrm_contribution t1 WHERE
-     t1.contact_id = NEW.contact_id AND t1.contribution_status_id = 1 AND
-     t1.financial_type_id IN (%membership_financial_type_ids) AND t1.is_test = 0 ORDER BY 
-    receive_date DESC LIMIT 1)',
+    'trigger_sql' =>'(
+      SELECT
+        concat(
+          date_format(t1.receive_date, "%Y-%m-%d"),
+          " (",
+          t1.invoice_number,
+          ")"
+        )
+      FROM
+        civicrm_contribution t1
+        inner join civicrm_membership_payment t2 on t2.contribution_id = t1.id
+        left join civicrm_contribution_soft t3 on t3.contribution_id = t1.id
+      WHERE
+        NEW.contact_id   in (t1.contact_id, t3.contact_id)
+        AND t1.contribution_status_id = 1
+        AND t1.financial_type_id IN (7)
+        AND t1.is_test = 0 -- and t1.id = 8275
+      ORDER BY
+        receive_date DESC
+      LIMIT 1
+    )',
     'trigger_table' => 'civicrm_contribution',
     'optgroup' => 'membership',
   );
