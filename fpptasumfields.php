@@ -117,7 +117,7 @@ function fpptasumfields_civicrm_sumfields_definitions(&$custom) {
   // its usual "financial type" filter options, which fppta can use to limit, e.g.
   // to 'cppt' membership payments.
   $custom['fields']['fppta_last_membership_payment'] = array(
-    'label' => E::ts('Last Membership Payment: Info'),
+    'label' => E::ts('FPPTA: Last Membership Payment: Info'),
     'data_type' => 'String',
     'html_type' => 'Text',
     'weight' => '60',
