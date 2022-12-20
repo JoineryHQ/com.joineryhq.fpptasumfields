@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="com.joineryhq.fpptasumfields" type="module">
   <file>fpptasumfields</file>
-  <name>com.joineryhq.fpptasumfields</name>
-  <description>FIXME</description>
+  <name>FPPTA Summary Fields</name>
+  <description>Custom Summary Fields for FPPTA</description>
   <license>GPL-3.0</license>
   <maintainer>
     <author>Allen Shaw</author>
@@ -34,4 +34,7 @@
     <mixin>mgd-php@1.0.0</mixin>
     <mixin>setting-php@1.0.0</mixin>
   </mixins>
+  <requires>
+    <ext>net.ourpowerbase.sumfields</ext>
+  </requires>
 </extension>
