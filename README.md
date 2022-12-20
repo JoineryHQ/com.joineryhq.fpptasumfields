@@ -1,54 +1,47 @@
 # com.joineryhq.fpptasumfields
 
-![Screenshot](/images/screenshot.png)
-
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+## FPPTA Summary Fields
 
 The extension is licensed under [GPL-3.0](LICENSE.txt).
 
+Custom for FPPTA:
+Provides additional fields under the [Summary Fields](https://civicrm.org/extensions/summary-fields) framework.
+
+## Additional fields
+
+This extension currently provides the following fields:
+
+* _FPPTA: Last Membership Payment: Info_: Information on the last membership payment, 
+  in the format "DATE (INV_NO)", where DATE is the Received Date of the contribution, 
+  and INV_NO is its Invoice Number. Like other fields under Summary Fields' "Membership" 
+  section, this field responds to the "Financial Types" filter settings for that section.
+
+
 ## Requirements
 
-* PHP v7.4+
-* CiviCRM (*FIXME: Version number*)
+* Extension: [Summary Fields](https://civicrm.org/extensions/summary-fields)
 
-## Installation (Web UI)
+## Configuration
 
-Learn more about installing CiviCRM extensions in the [CiviCRM Sysadmin Guide](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/).
+* After installing, navigate  to `Adminster -> Customize Data and Screens -> Summary Fields`.
+* Under the Membership section, enable the appropriate fields, and optionally configure the "Financial Type" filter setting.
 
-## Installation (CLI, Zip)
+## See also
+[Summary Fields Documentation](https://github.com/progressivetech/net.ourpowerbase.sumfields/blob/master/README.md)
 
-Sysadmins and developers may download the `.zip` file for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
+## Support
+![screenshot](/images/joinery-logo.png)
 
-```bash
-cd <extension-dir>
-cv dl com.joineryhq.fpptasumfields@https://github.com/FIXME/com.joineryhq.fpptasumfields/archive/master.zip
-```
-or
-```bash
-cd <extension-dir>
-cv dl com.joineryhq.fpptasumfields@https://lab.civicrm.org/extensions/com.joineryhq.fpptasumfields/-/archive/main/com.joineryhq.fpptasumfields-main.zip
-```
+Joinery provides services for CiviCRM including custom extension development, training, 
+data migrations, and more. We aim to keep this extension in good working order, and 
+will do our best to respond appropriately to issues reported on its 
+[github issue queue](https://github.com/twomice/com.joineryhq.jsumfields/issues). 
+In addition, if you require urgent or highly customized improvements to this extension, 
+we may suggest conducting a fee-based project under our standard commercial terms. 
+In any case, the place to start is the 
+[github issue queue](https://github.com/twomice/com.joineryhq.jsumfields/issues) -- 
+let us hear what you need and we'll be glad to help however we can.
 
-## Installation (CLI, Git)
-
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-git clone https://github.com/FIXME/com.joineryhq.fpptasumfields.git
-cv en fpptasumfields
-```
-or
-```bash
-git clone https://lab.civicrm.org/extensions/com.joineryhq.fpptasumfields.git
-cv en fpptasumfields
-```
-
-## Getting Started
-
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
-
-## Known Issues
-
-(* FIXME *)
+And, if you need help with any other aspect of CiviCRM -- from hosting to custom 
+development to strategic consultation and more -- please contact us directly 
+via https://joineryhq.com
