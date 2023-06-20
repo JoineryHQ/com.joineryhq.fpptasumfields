@@ -139,8 +139,8 @@ function fpptasumfields_civicrm_sumfields_definitions(&$custom) {
         NEW.contact_id in (t1.contact_id, t4.contact_id)
         AND t3.contact_id = NEW.contact_id
         AND t1.contribution_status_id = 1
-        AND t1.financial_type_id IN (7)
-        AND t1.is_test = 0 -- and t1.id = 8275
+        AND t1.financial_type_id IN (%membership_financial_type_ids)
+        AND t1.is_test = 0
       ORDER BY
         receive_date DESC
       LIMIT 1
