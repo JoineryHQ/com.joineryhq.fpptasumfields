@@ -125,7 +125,7 @@ function fpptasumfields_civicrm_sumfields_definitions(&$custom) {
     'trigger_sql' =>'(
       SELECT
         concat(
-          date_format(t1.receive_date, "%Y-%m-%d"),
+          date_format(t1.receive_date, "%m/%d/%Y"),
           " (",
           t1.invoice_number,
           ")"
