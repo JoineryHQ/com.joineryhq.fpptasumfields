@@ -18,7 +18,7 @@
   <version>1.0.3</version>
   <develStage>stable</develStage>
   <compatibility>
-    <ver>5.0</ver>
+    <ver>5.51</ver>
   </compatibility>
   <comments>Developed for FPPTA by Joinery.</comments>
   <classloader>
@@ -27,12 +27,13 @@
   </classloader>
   <civix>
     <namespace>CRM/Fpptasumfields</namespace>
-    <format>22.10.0</format>
+    <format>25.10.2</format>
     <angularModule>crmFpptasumfields</angularModule>
   </civix>
   <mixins>
-    <mixin>mgd-php@1.0.0</mixin>
+    <mixin>mgd-php@2.0.0</mixin>
     <mixin>setting-php@1.0.0</mixin>
+    <mixin>scan-classes@1.0.0</mixin>
   </mixins>
   <requires>
     <ext>net.ourpowerbase.sumfields</ext>
